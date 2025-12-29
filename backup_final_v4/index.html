@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Madre Tierra - Venta de lechosas frescas y de la más alta calidad. Productos orgánicos directo a tu puerta.">
+    <title>Madre Tierra | Venta de Lechosas Frescas</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@700;800&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="top-bar-content">
+                <div class="contact-info">
+                    <span>📞 Ordene su pedido: <a href="tel:+18494671581">849-467-1581</a></span>
+                    <span>📧 <a href="mailto:ventas@madretierra.com">ventas@madretierra.com</a></span>
+                </div>
+                <div class="top-links">
+                    <a href="#" class="btn-provider">Acceso Proveedores</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <h1>🌿 Madre Tierra</h1>
+                </div>
+                <nav class="nav" id="navMenu">
+                    <ul>
+                        <li><a href="#inicio" class="active">Inicio</a></li>
+                        <li><a href="#nosotros">Nosotros</a></li>
+                        <li><a href="#productos">Productos</a></li>
+                        <li><a href="#galeria">Galería</a></li>
+                        <li><a href="#contacto">Contacto</a></li>
+                    </ul>
+                </nav>
+                <button class="menu-toggle" id="menuToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="inicio">
+        <div class="hero-overlay"></div>
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <span class="hero-label">🌱 Productos Frescos y Naturales</span>
+                    <h2 class="hero-title">Madre Tierra</h2>
+                    <p class="hero-subtitle">Lechosas Premium ~ Frutas Tropicales ~ 100% Orgánico</p>
+                    <p class="hero-description">Somos líderes en la distribución de lechosas frescas de la más alta
+                        calidad. Directamente de nuestras plantaciones a tu mesa, garantizando frescura y sabor
+                        incomparables.</p>
+                    <div class="hero-buttons">
+                        <a href="#productos" class="btn btn-primary">Ver Catálogo</a>
+                        <a href="#contacto" class="btn btn-secondary">Solicitar Cotización</a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img src="images/papaya_hero_1766902889376.png" alt="Lechosas Frescas Premium">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section class="categories">
+        <div class="container">
+            <div class="category-cards">
+                <div class="category-card card-vegetables">
+                    <div class="category-image"
+                        style="background-image: url('images/papaya_product_3_1766902927666.png');"></div>
+                    <div class="category-overlay">
+                        <h3>Vegetales</h3>
+                    </div>
+                </div>
+                <div class="category-card card-fruits">
+                    <div class="category-image"
+                        style="background-image: url('images/papaya_product_2_1766902914330.png');"></div>
+                    <div class="category-overlay">
+                        <h3>Frutas</h3>
+                    </div>
+                </div>
+                <div class="category-card card-papaya">
+                    <div class="category-image"
+                        style="background-image: url('images/papaya_product_1_1766902901740.png');"></div>
+                    <div class="category-overlay">
+                        <h3>Lechosas</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Products -->
+    <section class="products" id="productos">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Lo Mejor de Nuestra Cosecha</span>
+                <h2 class="section-title">Productos Destacados</h2>
+                <p class="section-description">Seleccionamos frutas y productos de diversos orígenes y de variedades
+                    específicas</p>
+            </div>
+
+            <div class="product-filters">
+                <button class="filter-btn active" data-filter="all">Todos los Productos</button>
+                <button class="filter-btn" data-filter="frutas">Frutas</button>
+                <button class="filter-btn" data-filter="vegetales">Vegetales</button>
+                <button class="filter-btn" data-filter="organico">Orgánico</button>
+            </div>
+
+            <div class="product-grid">
+                <div class="product-card" data-category="frutas organico">
+                    <div class="product-image">
+                        <img src="images/papaya_product_1_1766902901740.png" alt="Lechosa Premium">
+                        <span class="product-badge">Premium</span>
+                    </div>
+                    <div class="product-info">
+                        <h3>Lechosa Premium</h3>
+                        <p>Dulce y jugosa</p>
+                        <div class="product-footer">
+                            <span class="product-price">Consultar precio</span>
+                            <button class="btn-cart">🛒</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="frutas organico">
+                    <div class="product-image">
+                        <img src="images/papaya_product_2_1766902914330.png" alt="Lechosa Orgánica">
+                        <span class="product-badge organic">Orgánico</span>
+                    </div>
+                    <div class="product-info">
+                        <h3>Lechosa Orgánica</h3>
+                        <p>100% natural</p>
+                        <div class="product-footer">
+                            <span class="product-price">Consultar precio</span>
+                            <button class="btn-cart">🛒</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="frutas">
+                    <div class="product-image">
+                        <img src="images/papaya_product_3_1766902927666.png" alt="Lechosa de Granja">
+                        <span class="product-badge fresh">Fresco</span>
+                    </div>
+                    <div class="product-info">
+                        <h3>Lechosa de Granja</h3>
+                        <p>Directo del campo</p>
+                        <div class="product-footer">
+                            <span class="product-price">Consultar precio</span>
+                            <button class="btn-cart">🛒</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="frutas">
+                    <div class="product-image">
+                        <img src="images/papaya_product_1_1766902901740.png" alt="Piña Miel">
+                    </div>
+                    <div class="product-info">
+                        <h3>Piña Miel</h3>
+                        <p>Extra dulce</p>
+                        <div class="product-footer">
+                            <span class="product-price">Consultar precio</span>
+                            <button class="btn-cart">🛒</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="frutas">
+                    <div class="product-image">
+                        <img src="images/papaya_product_2_1766902914330.png" alt="Mango">
+                    </div>
+                    <div class="product-info">
+                        <h3>Mango</h3>
+                        <p>Jugoso y aromático</p>
+                        <div class="product-footer">
+                            <span class="product-price">Consultar precio</span>
+                            <button class="btn-cart">🛒</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="vegetales organico">
+                    <div class="product-image">
+                        <img src="images/papaya_product_3_1766902927666.png" alt="Vegetales Frescos">
+                        <span class="product-badge organic">Orgánico</span>
+                    </div>
+                    <div class="product-info">
+                        <h3>Vegetales Frescos</h3>
+                        <p>Variedad selecta</p>
+                        <div class="product-footer">
+                            <span class="product-price">Consultar precio</span>
+                            <button class="btn-cart">🛒</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="why-choose" id="nosotros">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Nuestra Promesa</span>
+                <h2 class="section-title">¿Por Qué Elegirnos?</h2>
+                <p class="section-description">Somos una empresa comprometida con la calidad y el buen servicio</p>
+            </div>
+
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="60" height="60" viewBox="0 0 60 60" fill="none">
+                            <circle cx="30" cy="30" r="30" fill="#7DB249" />
+                            <path d="M30 15C30 15 25 20 25 25C25 28 27 30 30 30C33 30 35 28 35 25C35 20 30 15 30 15Z"
+                                fill="white" />
+                            <path d="M30 30C30 30 20 32 20 38C20 42 23 45 30 45C37 45 40 42 40 38C40 32 30 30 30 30Z"
+                                fill="white" />
+                            <ellipse cx="30" cy="20" rx="4" ry="2" fill="white" />
+                        </svg>
+                    </div>
+                    <h3>100% Productos Orgánicos</h3>
+                    <p>Cultivados sin químicos dañinos, respetando la naturaleza y tu salud</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="60" height="60" viewBox="0 0 60 60" fill="none">
+                            <circle cx="30" cy="30" r="30" fill="#7DB249" />
+                            <rect x="15" y="22" width="26" height="16" rx="2" fill="white" />
+                            <circle cx="20" cy="42" r="3" fill="white" />
+                            <circle cx="36" cy="42" r="3" fill="white" />
+                            <path d="M41 26V22C41 20 39 18 37 18H32V22" stroke="white" stroke-width="2" />
+                        </svg>
+                    </div>
+                    <h3>Entrega Rápida</h3>
+                    <p>Llevamos nuestros productos frescos directamente a tu puerta</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="60" height="60" viewBox="0 0 60 60" fill="none">
+                            <circle cx="30" cy="30" r="30" fill="#7DB249" />
+                            <path d="M30 18C30 18 38 22 38 30C38 36 34 42 30 42C26 42 22 36 22 30C22 22 30 18 30 18Z"
+                                fill="white" />
+                            <path d="M30 18C30 18 34 20 34 24C34 27 32 30 30 32C28 30 26 27 26 24C26 20 30 18 30 18Z"
+                                fill="#7DB249" />
+                        </svg>
+                    </div>
+                    <h3>Familia Saludable</h3>
+                    <p>Alimentos nutritivos que cuidan de tu familia</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="60" height="60" viewBox="0 0 60 60" fill="none">
+                            <circle cx="30" cy="30" r="30" fill="#7DB249" />
+                            <path d="M30 15L33 25L43 25L35 31L38 41L30 35L22 41L25 31L17 25L27 25L30 15Z"
+                                fill="white" />
+                        </svg>
+                    </div>
+                    <h3>Limpio y Seguro</h3>
+                    <p>Altos estándares de higiene y calidad en cada producto</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <div class="testimonials-overlay"></div>
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Lo Que Dicen Nuestros Clientes</span>
+                <h2 class="section-title">Testimoniales</h2>
+            </div>
+
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"Ya he comprado muchas veces y como siempre bien empaquetado, puntuales
+                        con la entrega y buen producto."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <img src="https://ui-avatars.com/api/?name=Maria+Gonzalez&size=50&background=7DB249&color=fff&bold=true&rounded=true"
+                                alt="María González" style="border-radius: 50%;">
+                        </div>
+                        <div class="author-info">
+                            <h4>María González</h4>
+                            <p>Restaurante La Esquina</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"Excelente, se consigue de todo, a buenos precios y la atención es de
+                        primera, seguiré comprando aquí."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <img src="https://ui-avatars.com/api/?name=Carlos+Rodriguez&size=50&background=7DB249&color=fff&bold=true&rounded=true"
+                                alt="Carlos Rodríguez" style="border-radius: 50%;">
+                        </div>
+                        <div class="author-info">
+                            <h4>Carlos Rodríguez</h4>
+                            <p>Supermercado El Ahorro</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"Muy satisfecha. Entrega perfecta y puntual. Productos frescos de
+                        excelente calidad."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <img src="https://ui-avatars.com/api/?name=Ana+Martinez&size=50&background=7DB249&color=fff&bold=true&rounded=true"
+                                alt="Ana Martínez" style="border-radius: 50%;">
+                        </div>
+                        <div class="author-info">
+                            <h4>Ana Martínez</h4>
+                            <p>Tienda Orgánica Vida Sana</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="newsletter">
+        <div class="container">
+            <div class="newsletter-content">
+                <div class="newsletter-text">
+                    <h2>Suscríbete a Nuestro Boletín</h2>
+                    <p>Recibe noticias sobre nuevos productos y ofertas especiales (no enviamos SPAM)</p>
+                </div>
+                <form class="newsletter-form" id="newsletterForm" name="newsletter" method="POST" data-netlify="true">
+                    <input type="hidden" name="form-name" value="newsletter">
+                    <input type="email" name="email" placeholder="Tu correo electrónico" required>
+                    <button type="submit" class="btn btn-primary">Suscribirse</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Contact Form Section (New) -->
+    <section class="contact-section" id="escribenos">
+        <div class="container">
+            <div class="contact-wrapper">
+                <div class="contact-text">
+                    <span class="section-label">Estamos para servirte</span>
+                    <h2 class="section-title">Escríbenos</h2>
+                    <p>¿Tienes dudas sobre nuestros productos o quieres ser distribuidor? Déjanos un mensaje.</p>
+                </div>
+                <form class="contact-form" name="contact" method="POST" data-netlify="true">
+                    <input type="hidden" name="form-name" value="contact">
+                    <div class="form-group">
+                        <label for="name">Nombre Completo</label>
+                        <input type="text" id="name" name="name" required placeholder="Ej. Juan Pérez">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Correo Electrónico</label>
+                        <input type="email" id="email" name="email" required placeholder="ejemplo@correo.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Mensaje</label>
+                        <textarea id="message" name="message" rows="4" required
+                            placeholder="¿En qué podemos ayudarte?"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">Enviar Mensaje</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" id="contacto">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Madre Tierra</h3>
+                    <p>Empresa comprometida con ofrecer productos frescos de la más alta calidad desde el año 2025.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook">📘</a>
+                        <a href="#" aria-label="Instagram">📷</a>
+                        <a href="#" aria-label="Twitter">🐦</a>
+                    </div>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Accesos Rápidos</h4>
+                    <ul>
+                        <li><a href="#inicio">Inicio</a></li>
+                        <li><a href="#nosotros">¿Quiénes Somos?</a></li>
+                        <li><a href="#productos">Productos</a></li>
+                        <li><a href="#contacto">Contacto</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Etiquetas</h4>
+                    <div class="tag-cloud">
+                        <span class="tag">Frutas</span>
+                        <span class="tag">Lechosas</span>
+                        <span class="tag">Orgánico</span>
+                        <span class="tag">Saludable</span>
+                        <span class="tag">Fresco</span>
+                    </div>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Contáctanos</h4>
+                    <ul class="contact-list">
+                        <li>📧 <a href="mailto:ventas@madretierra.com">ventas@madretierra.com</a></li>
+                        <li>📞 <a href="tel:+18494671581">849-467-1581</a></li>
+                        <li>📍 Tu ciudad, Tu país</li>
+                    </ul>
+                    <div class="working-hours">
+                        <h5>Horario de Trabajo</h5>
+                        <p>Lunes - Viernes: 8:00am - 6:00pm<br>
+                            Sábado: 9:00am - 3:00pm<br>
+                            Domingo: Cerrado</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 Madre Tierra. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/18494671581?text=Hola%20Madre%20Tierra%2C%20me%20gustar%C3%ADa%20m%C3%A1s%20informaci%C3%B3n%20sobre%20sus%20productos%20%F0%9F%A5%AD%F0%9F%8C%BF"
+        class="whatsapp-float" target="_blank" aria-label="Chat en WhatsApp">
+        <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+                d="M30 0C13.432 0 0 13.432 0 30C0 35.253 1.348 40.244 3.738 44.606L1.136 58.864L15.686 54.912C19.924 57.514 24.846 59 30.002 59C46.57 59 60 45.568 60 29.002C60.002 13.432 46.57 0 30 0ZM30.002 54C25.438 54 21.134 52.756 17.398 50.59L16.51 50.062L7.962 52.384L10.324 44.026L9.742 43.1C7.294 39.208 6.002 34.692 6.002 30.002C6.002 16.768 16.768 6.002 30.002 6.002C43.236 6.002 54 16.768 54 30.002C54 43.236 43.236 54 30.002 54Z"
+                fill="#25D366" />
+            <path
+                d="M43.152 35.63C42.432 35.27 38.892 33.528 38.23 33.284C37.57 33.044 37.09 32.924 36.61 33.644C36.13 34.364 34.766 35.968 34.35 36.448C33.932 36.928 33.52 36.99 32.8 36.63C32.08 36.27 29.76 35.512 27.01 33.062C24.814 31.106 23.33 28.69 22.906 27.97C22.482 27.25 22.862 26.858 23.224 26.5C23.548 26.176 23.944 25.658 24.306 25.236C24.668 24.814 24.786 24.526 25.026 24.048C25.268 23.568 25.148 23.15 24.966 22.79C24.786 22.43 23.344 18.88 22.744 17.436C22.158 16.036 21.564 16.224 21.144 16.224C20.75 16.224 20.304 16.216 19.858 16.216C19.412 16.216 18.694 16.384 18.09 17.042C17.49 17.7 15.786 19.3 15.786 22.548C15.786 25.798 18.15 28.94 18.498 29.406C18.844 29.872 23.174 36.56 29.804 39.424C34.204 41.324 35.084 40.948 35.888 40.872C36.792 40.786 38.892 39.664 39.328 38.438C39.766 37.214 39.766 36.168 39.644 35.968C39.52 35.764 39.062 35.632 43.152 35.63Z"
+                fill="white" />
+        </svg>
+    </a>
+</body>
+
+</html>
