@@ -8,7 +8,7 @@
     X-Frame-Options = "DENY"
     X-XSS-Protection = "1; mode=block"
     Referrer-Policy = "strict-origin-when-cross-origin"
-    Content-Security-Policy = "default-src 'self' https:; img-src 'self' data: https: blob:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://identity.netlify.com https://unpkg.com; connect-src 'self' https://ui-avatars.com https://api.netlify.com;"
+    Content-Security-Policy = "default-src 'self' https:; img-src 'self' data: https: blob:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://identity.netlify.com https://unpkg.com https://www.googletagmanager.com https://www.google-analytics.com; connect-src 'self' https://ui-avatars.com https://api.netlify.com https://www.google-analytics.com https://analytics.google.com https://www.googletagmanager.com;"
 
 # Enable Netlify Identity for CMS authentication
 [context.production.environment]
