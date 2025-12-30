@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Primary Meta Tags -->
+    <title>Zonas de Entrega | Madre Tierra - Lechosas Frescas RD</title>
+    <meta name="description"
+        content="Conoce nuestras zonas de entrega en República Dominicana. Horarios, costos y políticas de envío de Madre Tierra.">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@700;800&display=swap"
+        rel="stylesheet">
+
+    <style>
+        .zones-hero {
+            background: linear-gradient(135deg, #7DB249 0%, #5a8a34 100%);
+            padding: 120px 0 80px;
+            color: white;
+            text-align: center;
+        }
+
+        .zones-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .zones-hero p {
+            font-size: 1.2rem;
+            opacity: 0.95;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .zones-section {
+            padding: 80px 0;
+        }
+
+        .zone-card {
+            background: white;
+            border-radius: 16px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease;
+        }
+
+        .zone-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+        }
+
+        .zone-card h3 {
+            color: #7DB249;
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .zone-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .zone-list li {
+            padding: 10px 0;
+            border-bottom: 1px solid #f0f0f0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .zone-list li:last-child {
+            border-bottom: none;
+        }
+
+        .schedule-table {
+            width: 100%;
+            margin-top: 20px;
+            border-collapse: collapse;
+        }
+
+        .schedule-table th,
+        .schedule-table td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .schedule-table th {
+            background: #f8f9fa;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .pricing-box {
+            background: #f8f9fa;
+            border-radius: 12px;
+            padding: 25px;
+            margin-top: 20px;
+        }
+
+        .pricing-box h4 {
+            color: #7DB249;
+            margin-bottom: 15px;
+        }
+
+        .cta-section {
+            background: linear-gradient(135deg, #7DB249 0%, #5a8a34 100%);
+            padding: 60px 0;
+            text-align: center;
+            color: white;
+        }
+
+        .cta-section h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .btn-whatsapp {
+            background: #25D366;
+            color: white;
+            padding: 15px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .btn-whatsapp:hover {
+            background: #20ba5a;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="top-bar-content">
+                <div class="contact-info">
+                    <span>📞 Ordene su pedido: <a href="tel:+18494671581">849-467-1581</a></span>
+                    <span>📧 <a href="mailto:ventas@madretierra.com">ventas@madretierra.com</a></span>
+                </div>
+                <div class="top-links">
+                    <a href="index.html#admin" class="btn-provider">Acceso Proveedores</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <h1><a href="index.html" style="text-decoration: none; color: inherit;">🌿 Madre Tierra</a></h1>
+                </div>
+                <nav class="nav">
+                    <ul>
+                        <li><a href="index.html#inicio">Inicio</a></li>
+                        <li><a href="index.html#nosotros">Nosotros</a></li>
+                        <li><a href="index.html#productos">Productos</a></li>
+                        <li><a href="zonas.html" class="active">Zonas de Entrega</a></li>
+                        <li><a href="index.html#contacto">Contacto</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="zones-hero">
+        <div class="container">
+            <h1>📍 Zonas de Entrega</h1>
+            <p>Llevamos productos frescos directamente a tu negocio en toda la República Dominicana</p>
+        </div>
+    </section>
+
+    <!-- Zones Section -->
+    <section class="zones-section">
+        <div class="container">
+            <div class="zone-card">
+                <h3>🏙️ Zona Metropolitana de Santo Domingo</h3>
+                <p style="margin-bottom: 20px;"><strong>Entrega GRATIS</strong> en pedidos mayores a RD$5,000</p>
+                <ul class="zone-list">
+                    <li>✅ Santo Domingo Este</li>
+                    <li>✅ Santo Domingo Norte</li>
+                    <li>✅ Santo Domingo Oeste</li>
+                    <li>✅ Distrito Nacional</li>
+                    <li>✅ Los Alcarrizos</li>
+                    <li>✅ Boca Chica</li>
+                    <li>✅ San Antonio de Guerra</li>
+                </ul>
+            </div>
+
+            <div class="zone-card">
+                <h3>🏖️ Zona Este (Punta Cana y La Romana)</h3>
+                <p style="margin-bottom: 20px;">Entrega en 48-72 horas</p>
+                <ul class="zone-list">
+                    <li>✅ Punta Cana</li>
+                    <li>✅ Bávaro</li>
+                    <li>✅ La Romana</li>
+                    <li>✅ San Pedro de Macorís</li>
+                    <li>✅ Higüey</li>
+                </ul>
+                <div class="pricing-box">
+                    <h4>Costo de Envío</h4>
+                    <p>RD$500 - RD$800 según ubicación y volumen</p>
+                </div>
+            </div>
+
+            <div class="zone-card">
+                <h3>⛰️ Zona Norte (Santiago y Puerto Plata)</h3>
+                <p style="margin-bottom: 20px;">Entrega en 48-72 horas</p>
+                <ul class="zone-list">
+                    <li>✅ Santiago</li>
+                    <li>✅ Puerto Plata</li>
+                    <li>✅ La Vega</li>
+                    <li>✅ Moca</li>
+                    <li>✅ Sosúa</li>
+                </ul>
+                <div class="pricing-box">
+                    <h4>Costo de Envío</h4>
+                    <p>RD$600 - RD$1,000 según ubicación y volumen</p>
+                </div>
+            </div>
+
+            <div class="zone-card">
+                <h3>📋 Horarios de Entrega</h3>
+                <table class="schedule-table">
+                    <thead>
+                        <tr>
+                            <th>Día</th>
+                            <th>Horario</th>
+                            <th>Notas</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Lunes - Viernes</td>
+                            <td>8:00 AM - 6:00 PM</td>
+                            <td>Horario normal</td>
+                        </tr>
+                        <tr>
+                            <td>Sábado</td>
+                            <td>9:00 AM - 3:00 PM</td>
+                            <td>Solo zona metropolitana</td>
+                        </tr>
+                        <tr>
+                            <td>Domingo</td>
+                            <td>Cerrado</td>
+                            <td>-</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="zone-card">
+                <h3>💼 Políticas de Entrega</h3>
+                <ul class="zone-list">
+                    <li>✅ <strong>Pedido mínimo:</strong> 10 cajas (aprox. 100 lbs)</li>
+                    <li>✅ <strong>Tiempo de entrega:</strong> 24-72 horas según zona</li>
+                    <li>✅ <strong>Entregas urgentes:</strong> Disponibles con cargo extra</li>
+                    <li>✅ <strong>Empaque:</strong> Cajas refrigeradas para mantener frescura</li>
+                    <li>✅ <strong>Seguimiento:</strong> Notificaciones por WhatsApp</li>
+                    <li>✅ <strong>Devoluciones:</strong> Aceptadas si hay defectos (24 horas)</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>¿Tu zona no está en la lista?</h2>
+            <p style="margin-bottom: 30px; font-size: 1.1rem;">¡Contáctanos! Estamos expandiendo nuestras zonas de
+                entrega constantemente</p>
+            <a href="https://wa.me/18494671581?text=Hola%20Madre%20Tierra%2C%20quisiera%20saber%20si%20entregan%20en%20mi%20zona%20%F0%9F%93%8D"
+                class="btn-whatsapp" target="_blank">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                        d="M12 0C5.373 0 0 5.373 0 12c0 2.101.545 4.077 1.496 5.785L.455 23.545l6.026-1.579C8.139 23.217 10 24 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.6c-1.817 0-3.54-.51-5.007-1.391l-.359-.211-3.719.975.992-3.621-.232-.372A9.554 9.554 0 012.4 12c0-5.302 4.298-9.6 9.6-9.6 5.302 0 9.6 4.298 9.6 9.6 0 5.302-4.298 9.6-9.6 9.6z" />
+                </svg>
+                Consultar Mi Zona por WhatsApp
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Madre Tierra</h3>
+                    <p>Empresa comprometida con ofrecer productos frescos de la más alta calidad desde el año 2025.</p>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Accesos Rápidos</h4>
+                    <ul>
+                        <li><a href="index.html#inicio">Inicio</a></li>
+                        <li><a href="index.html#nosotros">¿Quiénes Somos?</a></li>
+                        <li><a href="index.html#productos">Productos</a></li>
+                        <li><a href="zonas.html">Zonas de Entrega</a></li>
+                        <li><a href="index.html#contacto">Contacto</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Contáctanos</h4>
+                    <ul class="contact-list">
+                        <li>📧 <a href="mailto:ventas@madretierra.com">ventas@madretierra.com</a></li>
+                        <li>📞 <a href="tel:+18494671581">849-467-1581</a></li>
+                        <li>📍 República Dominicana</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 Madre Tierra. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/18494671581?text=Hola%20Madre%20Tierra%2C%20me%20gustar%C3%ADa%20m%C3%A1s%20informaci%C3%B3n%20sobre%20sus%20productos%20%F0%9F%A5%AD%F0%9F%8C%BF"
+        class="whatsapp-float" target="_blank" aria-label="Chat en WhatsApp">
+        <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+                d="M30 0C13.432 0 0 13.432 0 30C0 35.253 1.348 40.244 3.738 44.606L1.136 58.864L15.686 54.912C19.924 57.514 24.846 59 30.002 59C46.57 59 60 45.568 60 29.002C60.002 13.432 46.57 0 30 0ZM30.002 54C25.438 54 21.134 52.756 17.398 50.59L16.51 50.062L7.962 52.384L10.324 44.026L9.742 43.1C7.294 39.208 6.002 34.692 6.002 30.002C6.002 16.768 16.768 6.002 30.002 6.002C43.236 6.002 54 16.768 54 30.002C54 43.236 43.236 54 30.002 54Z"
+                fill="#25D366" />
+            <path
+                d="M43.152 35.63C42.432 35.27 38.892 33.528 38.23 33.284C37.57 33.044 37.09 32.924 36.61 33.644C36.13 34.364 34.766 35.968 34.35 36.448C33.932 36.928 33.52 36.99 32.8 36.63C32.08 36.27 29.76 35.512 27.01 33.062C24.814 31.106 23.33 28.69 22.906 27.97C22.482 27.25 22.862 26.858 23.224 26.5C23.548 26.176 23.944 25.658 24.306 25.236C24.668 24.814 24.786 24.526 25.026 24.048C25.268 23.568 25.148 23.15 24.966 22.79C24.786 22.43 23.344 18.88 22.744 17.436C22.158 16.036 21.564 16.224 21.144 16.224C20.75 16.224 20.304 16.216 19.858 16.216C19.412 16.216 18.694 16.384 18.09 17.042C17.49 17.7 15.786 19.3 15.786 22.548C15.786 25.798 18.15 28.94 18.498 29.406C18.844 29.872 23.174 36.56 29.804 39.424C34.204 41.324 35.084 40.948 35.888 40.872C36.792 40.786 38.892 39.664 39.328 38.438C39.766 37.214 39.766 36.168 39.644 35.968C39.52 35.764 39.062 35.632 43.152 35.63Z"
+                fill="white" />
+        </svg>
+    </a>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

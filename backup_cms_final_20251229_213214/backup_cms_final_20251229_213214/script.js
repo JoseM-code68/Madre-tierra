@@ -53,97 +53,28 @@ window.addEventListener('scroll', updateActiveNav);
 // ==========================================
 // PRODUCT FILTERS
 // ==========================================
-let currentFilter = 'all';
-let currentSearchTerm = '';
-
 filterButtons.forEach(button => {
     button.addEventListener('click', () => {
         // Update active button
         filterButtons.forEach(btn => btn.classList.remove('active'));
         button.classList.add('active');
 
-        currentFilter = button.getAttribute('data-filter');
-        filterProducts();
-    });
-});
+        const filterValue = button.getAttribute('data-filter');
 
-// ==========================================
-// PRODUCT SEARCH (REAL-TIME)
-// ==========================================
-const searchInput = document.getElementById('productSearch');
-const productCount = document.getElementById('productCount');
+        // Filter products with animation
+        productCards.forEach((card, index) => {
+            const categories = card.getAttribute('data-category');
 
-function filterProducts() {
-    let visibleCount = 0;
-    const productGrid = document.querySelector('.product-grid');
-
-    productCards.forEach((card, index) => {
-        const categories = card.getAttribute('data-category');
-        const productName = card.querySelector('h3')?.textContent.toLowerCase() || '';
-        const productDesc = card.querySelector('p')?.textContent.toLowerCase() || '';
-
-        const matchesFilter = currentFilter === 'all' || categories?.includes(currentFilter);
-        const matchesSearch = !currentSearchTerm ||
-            productName.includes(currentSearchTerm.toLowerCase()) ||
-            productDesc.includes(currentSearchTerm.toLowerCase());
-
-        setTimeout(() => {
-            if (matchesFilter && matchesSearch) {
-                card.style.display = 'block';
-                card.style.animation = 'fadeInUp 0.5s ease forwards';
-                visibleCount++;
-            } else {
-                card.style.display = 'none';
-            }
-        }, index * 30);
-    });
-
-    // Update product count
-    setTimeout(() => {
-        if (productCount) {
-            productCount.innerHTML = `Mostrando <strong>${visibleCount}</strong> producto${visibleCount !== 1 ? 's' : ''}`;
-        }
-
-        // Show "no results" message if needed
-        let noResultsMsg = document.querySelector('.no-results-message');
-
-        if (visibleCount === 0) {
-            if (!noResultsMsg) {
-                noResultsMsg = document.createElement('div');
-                noResultsMsg.className = 'no-results-message';
-                noResultsMsg.innerHTML = `
-                    <div style="text-align: center; padding: 3rem; grid-column: 1 / -1;">
-                        <svg width="80" height="80" viewBox="0 0 80 80" fill="none" style="margin: 0 auto 1rem;">
-                            <circle cx="40" cy="40" r="35" stroke="#E0E0E0" stroke-width="4"/>
-                            <path d="M30 45 L50 45" stroke="#7DB249" stroke-width="4" stroke-linecap="round"/>
-                            <circle cx="30" cy="30" r="4" fill="#7DB249"/>
-                            <circle cx="50" cy="30" r="4" fill="#7DB249"/>
-                        </svg>
-                        <h3 style="color: #7DB249; margin-bottom: 0.5rem;">No se encontraron productos</h3>
-                        <p style="color: #6C757D;">Intenta con otro término de búsqueda o filtro</p>
-                    </div>
-                `;
-                productGrid.appendChild(noResultsMsg);
-            }
-            noResultsMsg.style.display = 'block';
-        } else if (noResultsMsg) {
-            noResultsMsg.style.display = 'none';
-        }
-    }, productCards.length * 30 + 100);
-
-    // Track search in Google Analytics
-    if (typeof gtag !== 'undefined' && currentSearchTerm) {
-        gtag('event', 'search', {
-            'search_term': currentSearchTerm,
-            'results_count': visibleCount
+            setTimeout(() => {
+                if (filterValue === 'all' || categories?.includes(filterValue)) {
+                    card.style.display = 'block';
+                    card.style.animation = 'fadeInUp 0.5s ease forwards';
+                } else {
+                    card.style.display = 'none';
+                }
+            }, index * 50);
         });
-    }
-}
-
-// Real-time search as user types
-searchInput?.addEventListener('input', (e) => {
-    currentSearchTerm = e.target.value.trim();
-    filterProducts();
+    });
 });
 
 // Add fadeInUp animation

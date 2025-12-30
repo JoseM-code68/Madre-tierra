@@ -1,0 +1,64 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "static/images/uploads"
+public_folder: "/images/uploads"
+
+collections:
+  # Products Collection
+  - name: "products"
+    label: "Productos"
+    folder: "content/products"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Nombre", name: "name", widget: "string"}
+      - {label: "Descripción", name: "description", widget: "text"}
+      - {label: "Precio", name: "price", widget: "string"}
+      - {label: "Categoría", name: "category", widget: "select", options: ["frutas", "vegetales", "organico"]}
+      - {label: "Badge", name: "badge", widget: "select", options: ["Premium", "Orgánico", "Fresco", "Ninguno"], default: "Premium"}
+      - {label: "Imagen", name: "image", widget: "image"}
+      - {label: "Disponible", name: "available", widget: "boolean", default: true}
+
+  # FAQ Collection
+  - name: "faq"
+    label: "Preguntas Frecuentes"
+    folder: "content/faq"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Pregunta", name: "question", widget: "string"}
+      - {label: "Respuesta", name: "answer", widget: "text"}
+      - {label: "Orden", name: "order", widget: "number", default: 1}
+
+  # Testimonials Collection
+  - name: "testimonials"
+    label: "Testimonios"
+    folder: "content/testimonials"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Nombre", name: "name", widget: "string"}
+      - {label: "Empresa", name: "company", widget: "string"}
+      - {label: "Testimonio", name: "text", widget: "text"}
+      - {label: "Iniciales para Avatar", name: "initials", widget: "string", hint: "Ej: MG para María González"}
+
+  # Site Settings
+  - name: "settings"
+    label: "Configuración del Sitio"
+    files:
+      - label: "Información General"
+        name: "general"
+        file: "content/settings.json"
+        fields:
+          - {label: "Título del Hero", name: "hero_title", widget: "string"}
+          - {label: "Subtítulo del Hero", name: "hero_subtitle", widget: "string"}
+          - {label: "Descripción del Hero", name: "hero_description", widget: "text"}
+          - {label: "Teléfono", name: "phone", widget: "string"}
+          - {label: "Email", name: "email", widget: "string"}
+          - {label: "Dirección", name: "address", widget: "string"}
+          - {label: "Horarios", name: "hours", widget: "text"}
+          - {label: "Facebook URL", name: "facebook", widget: "string", required: false}
+          - {label: "Instagram URL", name: "instagram", widget: "string", required: false}
+          - {label: "Twitter URL", name: "twitter", widget: "string", required: false}
