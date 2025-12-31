@@ -1886,7 +1886,7 @@ button {
     display: flex;
     gap: 2rem;
     width: max-content;
-    animation: scroll 40s linear infinite;
+    animation: scroll 80s linear infinite; /* Slower speed */
 }
 
 .testimonials-slider:hover .testimonials-track {
@@ -1904,7 +1904,7 @@ button {
     100% { transform: translateX(-50%); } /* Assumes content is duplicated x2 */
 }
 
-/* Fade Effects on Sides */
+/* Fade Effects on Sides - HIDDEN as requested */
 .slider-fade-left,
 .slider-fade-right {
     position: absolute;
@@ -1913,16 +1913,17 @@ button {
     width: 100px;
     z-index: 2;
     pointer-events: none;
+    display: none; /* User requested to remove this */
 }
 
 .slider-fade-left {
     left: 0;
-    background: linear-gradient(to right, white, transparent);
+    background: none;
 }
 
 .slider-fade-right {
     right: 0;
-    background: linear-gradient(to left, white, transparent);
+    background: none;
 }
 
 /* Mobile Adjustments */
