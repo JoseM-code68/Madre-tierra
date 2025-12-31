@@ -1957,16 +1957,15 @@ button {
 }
 
 
-/* Testimonial Card Styling Fix */
-/* Testimonial Card Styling Fix */
+/* Testimonial Card Styling Fix - LIGHT THEME */
 .testimonial-card {
-    background: #7DB249;
-    /* Green by default */
-    color: white !important;
-    /* Force white text */
+    background: white;
+    color: #333;
     padding: 2rem;
     border-radius: 15px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+    border: 2px solid #7DB249;
+    /* Green border for branding */
     transition: all 0.3s ease;
 }
 
@@ -1975,40 +1974,36 @@ button {
     font-size: 1.1rem;
     line-height: 1.6;
     margin-bottom: 1.5rem;
-    color: white !important;
-    /* Force white text */
+    color: #555;
 }
 
 .testimonial-author h4 {
     font-weight: 700;
     margin-bottom: 0.2rem;
-    color: white !important;
-    /* Force white text */
+    color: #2c3e50;
 }
 
 .testimonial-author p {
     font-size: 0.9rem;
     opacity: 0.9;
-    color: rgba(255, 255, 255, 0.9) !important;
-    /* Light white for secondary text */
+    color: #7f8c8d;
 }
 
-/* Hover Effect: Light/Clear when Paused */
+/* Hover Effect: Just a slight lift */
 .testimonials-slider:hover .testimonial-card {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
     background: white;
-    color: #333 !important;
-    transform: scale(1.02);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 }
 
 .testimonials-slider:hover .testimonial-text {
-    color: #333 !important;
+    color: #333;
 }
 
 .testimonials-slider:hover .testimonial-author h4 {
-    color: #2c3e50 !important;
+    color: #2c3e50;
 }
 
 .testimonials-slider:hover .testimonial-author p {
-    color: #7f8c8d !important;
+    color: #7f8c8d;
 }
