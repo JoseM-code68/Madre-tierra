@@ -53,8 +53,9 @@ class ContentRenderer {
                 <p class="testimonial-text">"${testimonial.text}"</p>
                 <div class="testimonial-author">
                     <div class="author-avatar">
-                        <img src="https://ui-avatars.com/api/?name=${encodeURIComponent(testimonial.initials || testimonial.name)}&size=50&background=7DB249&color=fff&bold=true&rounded=true"
-                             alt="${testimonial.name}">
+                        <img src="${testimonial.avatar || `https://ui-avatars.com/api/?name=${encodeURIComponent(testimonial.initials || testimonial.name)}&size=80&background=7DB249&color=fff&bold=true&rounded=true`}"
+                             alt="${testimonial.name}"
+                             style="width: 60px; height: 60px; border-radius: 50%; object-fit: cover; border: 3px solid white; box-shadow: 0 2px 8px rgba(0,0,0,0.2);">
                     </div>
                     <div class="author-info">
                         <h4>${testimonial.name}</h4>
