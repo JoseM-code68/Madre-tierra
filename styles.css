@@ -1067,6 +1067,43 @@ button {
         display: none;
     }
 
+    /* Testimonials - More compact for mobile */
+    .testimonials {
+        padding: var(--spacing-2xl) 0;
+        /* Reduced from 5xl */
+    }
+
+    .testimonials .section-title {
+        font-size: 1.8rem;
+        /* Reduced */
+        margin-bottom: var(--spacing-md);
+    }
+
+    .testimonials .section-label {
+        font-size: 0.75rem;
+        /* Smaller label */
+    }
+
+    .testimonial-card {
+        padding: var(--spacing-md);
+        /* Reduced from xl */
+    }
+
+    .testimonial-text {
+        font-size: 0.9rem;
+        /* Smaller text */
+        line-height: 1.5;
+        margin-bottom: var(--spacing-md);
+    }
+
+    .author-info h4 {
+        font-size: 0.9rem;
+    }
+
+    .author-info p {
+        font-size: 0.8rem;
+    }
+
     .hero-title {
         font-size: 2.5rem;
     }
