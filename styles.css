@@ -1871,3 +1871,64 @@ button {
     background: white;
 }
 
+
+/* =========================================
+   Testimonials Carousel Styles
+   ========================================= */
+.testimonials-slider {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    padding: 2rem 0;
+}
+
+.testimonials-track {
+    display: flex;
+    gap: 2rem;
+    width: max-content;
+    animation: scroll 40s linear infinite;
+}
+
+.testimonials-slider:hover .testimonials-track {
+    animation-play-state: paused;
+}
+
+.testimonial-card {
+    min-width: 350px; /* Fixed width for consistent slider */
+    max-width: 350px;
+}
+
+/* Keyframes for infinite scroll */
+@keyframes scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); } /* Assumes content is duplicated x2 */
+}
+
+/* Fade Effects on Sides */
+.slider-fade-left,
+.slider-fade-right {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100px;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.slider-fade-left {
+    left: 0;
+    background: linear-gradient(to right, white, transparent);
+}
+
+.slider-fade-right {
+    right: 0;
+    background: linear-gradient(to left, white, transparent);
+}
+
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+    .testimonial-card {
+        min-width: 280px;
+    }
+}
+

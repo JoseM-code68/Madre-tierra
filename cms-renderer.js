@@ -136,10 +136,19 @@ document.addEventListener('DOMContentLoaded', async () => {
             });
         }
 
-        // Render testimonials
-        const testimonialsGrid = document.querySelector('.testimonials-grid');
-        if (testimonialsGrid && content.testimonials.length > 0) {
-            window.contentRenderer.renderTestimonials(content.testimonials, testimonialsGrid);
+        // Render testimonials (Carousel Logic)
+        const testimonialsTrack = document.querySelector('.testimonials-track');
+        if (testimonialsTrack && content.testimonials.length > 0) {
+            // Duplicate array for infinite loop effect
+            // If few items, duplicate more times to fill width
+            let loopContent = content.testimonials;
+            if (loopContent.length < 5) {
+                loopContent = [...loopContent, ...loopContent, ...loopContent, ...loopContent];
+            } else {
+                loopContent = [...loopContent, ...loopContent]; // Minimum double for 50% scroll
+            }
+
+            window.contentRenderer.renderTestimonials(loopContent, testimonialsTrack);
         }
 
         // Update settings
