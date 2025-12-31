@@ -354,6 +354,8 @@ button {
 .features {
     padding: var(--spacing-5xl) 0;
     /* Increased top padding */
+    padding-top: var(--spacing-6xl);
+    /* Extra space from hero */
     background: var(--color-white);
     position: relative;
     z-index: 10;
