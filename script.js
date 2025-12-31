@@ -243,13 +243,13 @@ function sendWhatsApp() {
     const price = document.getElementById('modalPrice')?.innerText;
     const qty = document.getElementById('orderQuantity')?.value || '1';
     const name = document.getElementById('clientName')?.value || 'Cliente';
-    const phone = '18296370216'; // Your number
+    const phone = '18494671581';
 
-    let msg = `Hola 👋, quiero pedir en Madre Tierra:\n\n`;
-    msg += `🥥 *Producto/s:* ${title}\n`;
-    msg += `⚖️ *Cantidad:* ${qty}\n`;
-    msg += `💵 *Precio:* ${price}\n`;
-    msg += `👤 *Mi Nombre:* ${name}\n\n`;
+    let msg = `Hola, quiero pedir en Madre Tierra:\n\n`;
+    msg += `Producto/s: ${title}\n`;
+    msg += `Cantidad: ${qty}\n`;
+    msg += `Precio: ${price}\n`;
+    msg += `Mi Nombre: ${name}\n\n`;
     msg += `¿Me confirma disponibilidad?`;
 
     const url = `https://wa.me/${phone}?text=${encodeURIComponent(msg)}`;
