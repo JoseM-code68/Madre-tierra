@@ -3,6 +3,7 @@
     "outputDirectory": ".",
     "installCommand": "echo 'No installation needed'",
     "framework": null,
+    "public": true,
     "headers": [
         {
             "source": "/(.*)",
@@ -24,24 +25,15 @@
                     "value": "default-src 'self' https:; img-src 'self' data: https: blob:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://identity.netlify.com https://unpkg.com https://www.googletagmanager.com https://www.google-analytics.com; connect-src 'self' https://ui-avatars.com https://api.netlify.com https://www.google-analytics.com https://analytics.google.com https://www.googletagmanager.com;"
                 }
             ]
-        }
-    ],
-    "rewrites": [
-        {
-            "source": "/admin",
-            "destination": "/admin/index.html"
         },
         {
             "source": "/admin/config.yml",
-            "destination": "/admin/config.yml"
-        }
-    ],
-    "routes": [
-        {
-            "src": "/admin/config.yml",
-            "headers": {
-                "Content-Type": "text/yaml"
-            }
+            "headers": [
+                {
+                    "key": "Content-Type",
+                    "value": "text/yaml; charset=utf-8"
+                }
+            ]
         }
     ]
 }
