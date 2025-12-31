@@ -732,7 +732,8 @@ button {
 .testimonials-overlay {
     position: absolute;
     inset: 0;
-    background: rgba(0, 0, 0, 0.75);
+    background: rgba(255, 255, 255, 0.92);
+    /* White overlay for clean look */
     z-index: 1;
 }
 
@@ -741,13 +742,17 @@ button {
     z-index: 2;
 }
 
-.testimonials .section-label,
+.testimonials .section-label {
+    color: var(--primary-color);
+    font-weight: 700;
+}
+
 .testimonials .section-title {
-    color: var(--color-white);
+    color: var(--secondary-color);
 }
 
 .testimonials .section-title::after {
-    background: var(--color-white);
+    background: var(--primary-color);
 }
 
 .testimonials-grid {
