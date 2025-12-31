@@ -732,9 +732,11 @@ button {
 .testimonials-overlay {
     position: absolute;
     inset: 0;
-    background: rgba(255, 255, 255, 0.92);
-    /* White overlay for clean look */
+    background: none;
+    /* Removed overlay as requested for high-quality bg view */
     z-index: 1;
+    display: none;
+    /* Completely hide it to be sure */
 }
 
 .testimonials .container {
