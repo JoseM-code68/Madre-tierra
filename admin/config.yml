@@ -2,6 +2,7 @@ backend:
   name: git-gateway
   branch: main
 
+site_url: https://madre-tierra-six.vercel.app
 media_folder: "static/images/uploads"
 public_folder: "/images/uploads"
 
