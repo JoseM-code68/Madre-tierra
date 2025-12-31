@@ -1069,39 +1069,46 @@ button {
 
     /* Testimonials - More compact for mobile */
     .testimonials {
-        padding: var(--spacing-2xl) 0;
-        /* Reduced from 5xl */
-    }
-
-    .testimonials .section-title {
-        font-size: 1.8rem;
-        /* Reduced */
-        margin-bottom: var(--spacing-md);
+        padding: var(--spacing-lg) 0;
+        /* Further reduced from 2xl to lg */
     }
 
     .testimonials .section-label {
-        font-size: 0.75rem;
-        /* Smaller label */
+        font-size: 0.7rem;
+        /* Even smaller */
+        margin-bottom: var(--spacing-xs);
+    }
+
+    .testimonials .section-title {
+        font-size: 1.5rem;
+        /* Further reduced from 1.8rem */
+        margin-bottom: var(--spacing-sm);
+    }
+
+    .testimonials-grid {
+        gap: var(--spacing-md);
+        /* Reduced gap between cards */
     }
 
     .testimonial-card {
-        padding: var(--spacing-md);
-        /* Reduced from xl */
+        padding: var(--spacing-sm);
+        /* Further reduced padding */
     }
 
     .testimonial-text {
-        font-size: 0.9rem;
+        font-size: 0.85rem;
         /* Smaller text */
-        line-height: 1.5;
-        margin-bottom: var(--spacing-md);
+        line-height: 1.4;
+        margin-bottom: var(--spacing-sm);
     }
 
     .author-info h4 {
-        font-size: 0.9rem;
+        font-size: 0.85rem;
+        margin-bottom: 2px;
     }
 
     .author-info p {
-        font-size: 0.8rem;
+        font-size: 0.75rem;
     }
 
     .hero-title {
