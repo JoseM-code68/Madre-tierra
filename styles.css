@@ -1990,3 +1990,35 @@ button {
     opacity: 0.9;
     color: rgba(255, 255, 255, 0.9) !important;
 }
+/* =========================================
+   Testimonials Carousel - RESTORED
+   ========================================= */
+.testimonials-slider {
+    width: 100%;
+    padding: 3rem 0;
+    overflow: hidden;
+    position: relative;
+}
+
+.testimonials-track {
+    display: flex;
+    gap: 2rem;
+    width: max-content;
+    animation: scroll 80s linear infinite;
+}
+
+.testimonials-slider:hover .testimonials-track {
+    animation-play-state: paused;
+}
+
+@keyframes scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); } 
+}
+
+/* Ensure overlay is hidden as requested */
+.testimonials-overlay {
+    display: none !important;
+    background: none !important;
+}
+
