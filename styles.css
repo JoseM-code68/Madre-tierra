@@ -1949,6 +1949,49 @@ button {
     opacity: 0.9;
 }
 
+/* Mobile Responsive B2B - RE-APPLIED FIX */
+@media (max-width: 768px) {
+    .b2b-hero {
+        height: auto;
+        min-height: 50vh;
+        /* Flexible height */
+        padding: 5rem 1.5rem;
+        /* More breathing room */
+        border-radius: 0 0 30px 30px;
+        /* New AI generated luxury buffet background */
+        background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.5)), url('images/mobile_b2b_bg.png');
+        background-size: cover;
+        background-position: center;
+    }
+
+    .b2b-hero-content h1 {
+        font-size: 2.4rem;
+        /* Readable on mobile */
+        margin-bottom: 1rem;
+    }
+
+    .b2b-hero-content p {
+        font-size: 1.1rem;
+        margin-bottom: 2rem;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .hero-buttons a {
+        width: 100%;
+        /* Full width buttons focus */
+        display: block;
+        text-align: center;
+    }
+
+    .sector-card {
+        padding: 1.5rem;
+    }
+}
+
 /* Mobile Responsive B2B */
 @media (max-width: 768px) {
     .b2b-hero-content h1 {
