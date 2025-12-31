@@ -730,9 +730,9 @@ button {
     position: relative;
     padding: var(--spacing-3xl) 0;
     /* Reduced from 5xl to 3xl */
-    margin-top: -200px;
-    /* Pull section way up to cover header area */
-    padding-top: calc(var(--spacing-3xl) + 200px);
+    margin-top: -80px;
+    /* Reduced from -200px for better spacing */
+    padding-top: calc(var(--spacing-3xl) + 80px);
     /* Add padding to compensate */
     background-image: url('images/professional_hero_bg_1766903555894.webp');
     background-size: cover;
