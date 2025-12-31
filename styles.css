@@ -1028,21 +1028,9 @@ button {
         cursor: pointer;
     }
 
-    /* Category Cards - Smaller for mobile */
-    .category-card {
-        height: 180px;
-        /* Reduced from 250px */
-    }
-
-    .category-overlay h3 {
-        font-size: 1.2rem;
-        /* Reduced from 1.5rem */
-        padding: 0.5rem;
-    }
-
-    .category-overlay {
-        padding: 0.8rem;
-        /* Reduced padding */
+    /* Hide category cards section completely on mobile */
+    .categories {
+        display: none;
     }
 
     .hero-title {
