@@ -1745,8 +1745,8 @@ button {
         min-height: 40vh;
         padding: 4rem 1.5rem;
         border-radius: 0 0 30px 30px;
-        /* User requested image background for mobile */
-        background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.2)), url('images/mobile_about_bg.jpg');
+        /* Generated papaya background for mobile */
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.4)), url('images/mobile_about_bg_gen.png');
         background-size: cover;
         background-position: center;
     }
