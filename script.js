@@ -1,4 +1,4 @@
-// ==========================================
+﻿// ==========================================
 // DOM ELEMENTS
 // ==========================================
 const menuToggle = document.getElementById('menuToggle');
@@ -120,7 +120,7 @@ function filterProducts() {
                             <circle cx="50" cy="30" r="4" fill="#7DB249"/>
                         </svg>
                         <h3 style="color: #7DB249; margin-bottom: 0.5rem;">No se encontraron productos</h3>
-                        <p style="color: #6C757D;">Intenta con otro término de búsqueda o filtro</p>
+                        <p style="color: #6C757D;">Intenta con otro tÃ©rmino de bÃºsqueda o filtro</p>
                     </div>
                 `;
                 productGrid.appendChild(noResultsMsg);
@@ -174,7 +174,7 @@ newsletterForm?.addEventListener('submit', (e) => {
         // Show success message
         const successMessage = document.createElement('div');
         successMessage.className = 'success-message';
-        successMessage.textContent = '¡Gracias por suscribirte! 🎉';
+        successMessage.textContent = 'Â¡Gracias por suscribirte! ðŸŽ‰';
         successMessage.style.cssText = `
             position: fixed;
             top: 50%;
@@ -259,60 +259,6 @@ document.querySelectorAll('.product-card, .feature-card, .category-card').forEac
     observer.observe(el);
 });
 
-// ==========================================
-transform: translateX(0);
-                }
-            }
-`;
-        document.head.appendChild(slideInRightStyle);
-
-        // Remove after 2 seconds
-        setTimeout(() => {
-            notification.style.animation = 'slideOutRight 0.3s ease';
-            setTimeout(() => notification.remove(), 300);
-        }, 2000);
-
-        const slideOutRightStyle = document.createElement('style');
-        slideOutRightStyle.textContent = `
-@keyframes slideOutRight {
-                from {
-        opacity: 1;
-        transform: translateX(0);
-    }
-                to {
-        opacity: 0;
-        transform: translateX(100px);
-    }
-}
-`;
-        document.head.appendChild(slideOutRightStyle);
-
-        // Bounce animation on button
-        button.style.animation = 'none';
-        setTimeout(() => {
-            button.style.animation = 'cartBounce 0.5s ease';
-        }, 10);
-    });
-});
-
-// Cart button bounce animation
-const cartBounceStyle = document.createElement('style');
-cartBounceStyle.textContent = `
-@keyframes cartBounce {
-    0 %, 100 % {
-        transform: scale(1) rotate(0deg);
-    }
-    25 % {
-        transform: scale(1.2) rotate(12deg);
-    }
-    75 % {
-        transform: scale(0.9) rotate(- 12deg);
-}
-    }
-`;
-document.head.appendChild(cartBounceStyle);
-
-// ==========================================
 // HEADER SCROLL EFFECT
 // ==========================================
 const header = document.querySelector('.header');
@@ -372,7 +318,7 @@ faqQuestions.forEach(question => {
 // ==========================================
 // INITIALIZATION
 // ==========================================
-console.log('🌿 Madre Tierra - Website loaded successfully!');
+console.log('ðŸŒ¿ Madre Tierra - Website loaded successfully!');
 
 // ==========================================
 // PRODUCT DETAIL MODAL
@@ -471,7 +417,7 @@ orderForm?.addEventListener('submit', (e) => {
         message += \?? *Mi Nombre:* \\n\;
     }
     
-    message += \\n�Me confirman disponibilidad?\;
+    message += \\n¿Me confirman disponibilidad?\;
     
     const whatsappUrl = \https://wa.me/\?text=\\;
     
