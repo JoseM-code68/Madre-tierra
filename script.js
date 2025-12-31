@@ -373,3 +373,109 @@ faqQuestions.forEach(question => {
 // INITIALIZATION
 // ==========================================
 console.log('ðŸŒ¿ Madre Tierra - Website loaded successfully!');
+
+// ==========================================
+// PRODUCT DETAIL MODAL
+// ==========================================
+const productModal = document.getElementById('productModal');
+const modalClose = document.querySelector('.modal-close');
+const modalImage = document.getElementById('modalImage');
+const modalBadge = document.getElementById('modalBadge');
+const modalTitle = document.getElementById('modalTitle');
+const modalPrice = document.getElementById('modalPrice');
+const modalDescription = document.getElementById('modalDescription');
+const orderForm = document.getElementById('orderForm');
+const qtyInput = document.getElementById('orderQuantity');
+const minusBtn = document.querySelector('.qty-btn.minus');
+const plusBtn = document.querySelector('.qty-btn.plus');
+
+// Open Modal logic
+document.addEventListener('click', (e) => {
+    const card = e.target.closest('.product-card');
+    if (card) {
+        const image = card.querySelector('img').src;
+        const title = card.querySelector('h3').innerText;
+        const price = card.querySelector('.product-price').innerText;
+        const description = card.querySelector('p').innerText;
+        const badge = card.querySelector('.product-badge')?.innerText || '';
+        const badgeClass = card.querySelector('.product-badge')?.className || 'product-badge';
+
+        // Populate Modal
+        modalImage.src = image;
+        modalTitle.innerText = title;
+        modalPrice.innerText = price;
+        modalDescription.innerText = description;
+        
+        if(badge) {
+            modalBadge.innerText = badge;
+            modalBadge.className = badgeClass;
+            modalBadge.style.display = 'inline-block';
+        } else {
+            modalBadge.style.display = 'none';
+        }
+
+        // Reset form
+        qtyInput.value = 1;
+        
+        // Show Modal
+        productModal.classList.add('active');
+        document.body.style.overflow = 'hidden'; // Prevent background scrolling
+    }
+});
+
+// Close Modal logic
+function closeModal() {
+    productModal.classList.remove('active');
+    document.body.style.overflow = '';
+}
+
+modalClose?.addEventListener('click', closeModal);
+
+productModal?.addEventListener('click', (e) => {
+    if (e.target === productModal) closeModal();
+});
+
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && productModal.classList.contains('active')) {
+        closeModal();
+    }
+});
+
+// Quantity Selector
+minusBtn?.addEventListener('click', () => {
+    const current = parseInt(qtyInput.value);
+    if (current > 1) qtyInput.value = current - 1;
+});
+
+plusBtn?.addEventListener('click', () => {
+    const current = parseInt(qtyInput.value);
+    qtyInput.value = current + 1;
+});
+
+// WhatsApp Order Logic
+orderForm?.addEventListener('submit', (e) => {
+    e.preventDefault();
+    
+    const product = modalTitle.innerText;
+    const price = modalPrice.innerText;
+    const qty = qtyInput.value;
+    const name = document.getElementById('clientName').value;
+    
+    const phoneNumber = '18296370216'; // Replace with actual number if different
+    
+    let message = \Hola ??, me interesa hacer un pedido de Madre Tierra:\n\n\;
+    message += \?? *Producto:* \\n\;
+    message += \?? *Cantidad:* \ (Precio: \)\n\;
+    
+    if(name) {
+        message += \?? *Mi Nombre:* \\n\;
+    }
+    
+    message += \\n¿Me confirman disponibilidad?\;
+    
+    const whatsappUrl = \https://wa.me/\?text=\\;
+    
+    window.open(whatsappUrl, '_blank');
+    closeModal();
+});
+
