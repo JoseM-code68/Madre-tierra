@@ -260,45 +260,10 @@ document.querySelectorAll('.product-card, .feature-card, .category-card').forEac
 });
 
 // ==========================================
-// CART BUTTON INTERACTION
-// ==========================================
-document.querySelectorAll('.btn-cart').forEach(button => {
-    button.addEventListener('click', (e) => {
-        e.preventDefault();
-
-        // Create floating notification
-        const notification = document.createElement('div');
-        notification.textContent = '¡Agregado! 🛒';
-        notification.style.cssText = `
-            position: fixed;
-            top: 100px;
-            right: 20px;
-            background: linear-gradient(135deg, #FF8C42 0%, #FFC107 100%);
-            color: white;
-            padding: 1rem 1.5rem;
-            border-radius: 50px;
-            font-weight: 600;
-            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
-            z-index: 1000;
-            animation: slideInRight 0.3s ease;
-        `;
-
-        document.body.appendChild(notification);
-
-        // Add animation
-        const slideInRightStyle = document.createElement('style');
-        slideInRightStyle.textContent = `
-            @keyframes slideInRight {
-                from {
-                    opacity: 0;
-                    transform: translateX(100px);
-                }
-                to {
-                    opacity: 1;
-                    transform: translateX(0);
+transform: translateX(0);
                 }
             }
-        `;
+`;
         document.head.appendChild(slideInRightStyle);
 
         // Remove after 2 seconds
@@ -309,17 +274,17 @@ document.querySelectorAll('.btn-cart').forEach(button => {
 
         const slideOutRightStyle = document.createElement('style');
         slideOutRightStyle.textContent = `
-            @keyframes slideOutRight {
+@keyframes slideOutRight {
                 from {
-                    opacity: 1;
-                    transform: translateX(0);
-                }
+        opacity: 1;
+        transform: translateX(0);
+    }
                 to {
-                    opacity: 0;
-                    transform: translateX(100px);
-                }
-            }
-        `;
+        opacity: 0;
+        transform: translateX(100px);
+    }
+}
+`;
         document.head.appendChild(slideOutRightStyle);
 
         // Bounce animation on button
@@ -333,16 +298,16 @@ document.querySelectorAll('.btn-cart').forEach(button => {
 // Cart button bounce animation
 const cartBounceStyle = document.createElement('style');
 cartBounceStyle.textContent = `
-    @keyframes cartBounce {
-        0%, 100% {
-            transform: scale(1) rotate(0deg);
-        }
-        25% {
-            transform: scale(1.2) rotate(12deg);
-        }
-        75% {
-            transform: scale(0.9) rotate(-12deg);
-        }
+@keyframes cartBounce {
+    0 %, 100 % {
+        transform: scale(1) rotate(0deg);
+    }
+    25 % {
+        transform: scale(1.2) rotate(12deg);
+    }
+    75 % {
+        transform: scale(0.9) rotate(- 12deg);
+}
     }
 `;
 document.head.appendChild(cartBounceStyle);
@@ -375,7 +340,7 @@ window.addEventListener('scroll', () => {
     const hero = document.querySelector('.hero');
 
     if (hero && scrolled < window.innerHeight) {
-        hero.style.transform = `translateY(${scrolled * 0.5}px)`;
+        hero.style.transform = `translateY(${ scrolled * 0.5}px)`;
         hero.style.opacity = 1 - (scrolled / 600);
     }
 });

@@ -19,7 +19,6 @@ class ContentRenderer {
                     <p>${product.description}</p>
                     <div class="product-footer">
                         <span class="product-price">${product.price}</span>
-                        <button class="btn-cart" aria-label="Agregar al carrito">🛒</button>
                     </div>
                 </div>
             </div>
