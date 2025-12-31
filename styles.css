@@ -351,9 +351,13 @@ button {
 /* ==========================================
    CATEGORIES
    ========================================== */
-.categories {
-    padding: var(--spacing-2xl) 0;
+.features {
+    padding: var(--spacing-5xl) 0;
+    /* Increased top padding */
     background: var(--color-white);
+    position: relative;
+    z-index: 10;
+    /* Ensure it sits above testimonials background */
 }
 
 .category-cards {
