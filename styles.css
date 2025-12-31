@@ -1864,3 +1864,10 @@ button {
     }
 }
 
+
+/* Benefits Section Spacing Fix */
+.benefits-section {
+    padding: 6rem 0;
+    background: white;
+}
+
