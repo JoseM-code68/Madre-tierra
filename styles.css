@@ -1635,7 +1635,8 @@ button {
    About Page Styles
    ========================================= */
 .about-hero {
-    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('images/papaya_hero_1766902889376.webp');
+    /* Updated to use the generated papaya texture as requested for PC too */
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/mobile_about_bg_gen.png');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
