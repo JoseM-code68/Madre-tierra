@@ -1077,6 +1077,11 @@ button {
         padding: 0.8rem;
     }
 
+    /* Hide description on mobile as requested (simplification) */
+    .product-info p {
+        display: none;
+    }
+
     .product-info h3 {
         font-size: 1rem;
         /* Smaller title */
