@@ -22,34 +22,64 @@ function initApp() {
 // ==========================================
 // 1. MOBILE MENU
 // ==========================================
+// ==========================================
+// 1. MOBILE MENU (RECREATED & ROBUST)
+// ==========================================
 function initMobileMenu() {
     const menuToggle = document.getElementById('menuToggle');
     const navMenu = document.getElementById('navMenu');
 
-    if (menuToggle && navMenu) {
-        menuToggle.addEventListener('click', (e) => {
-            e.stopPropagation(); // Prevent document click from immediately closing it
-            navMenu.classList.toggle('active');
-            menuToggle.classList.toggle('active');
-            console.log('🍔 Menu toggled');
-        });
-
-        // Close when clicking links
-        document.querySelectorAll('.nav a').forEach(link => {
-            link.addEventListener('click', () => {
-                navMenu.classList.remove('active');
-                menuToggle.classList.remove('active');
-            });
-        });
-
-        // Close when clicking outside
-        document.addEventListener('click', (e) => {
-            if (!navMenu.contains(e.target) && !menuToggle.contains(e.target)) {
-                navMenu.classList.remove('active');
-                menuToggle.classList.remove('active');
-            }
-        });
+    // Safety check
+    if (!menuToggle || !navMenu) {
+        console.error('Mobile menu elements not found');
+        return;
     }
+
+    // Toggle Function
+    const toggleMenu = (e) => {
+        if (e) {
+            e.preventDefault();
+            e.stopPropagation();
+        }
+        navMenu.classList.toggle('active');
+        menuToggle.classList.toggle('active');
+        const isActive = navMenu.classList.contains('active');
+        console.log('Mobile menu toggled:', isActive ? 'OPEN' : 'CLOSED');
+        menuToggle.setAttribute('aria-expanded', isActive);
+    };
+
+    // Close Function
+    const closeMenu = () => {
+        navMenu.classList.remove('active');
+        menuToggle.classList.remove('active');
+        menuToggle.setAttribute('aria-expanded', 'false');
+    };
+
+    // 1. Button Click
+    menuToggle.onclick = toggleMenu; // Direct assignment for reliability
+
+    // 2. Link Clicks (Close menu after selection)
+    const navLinks = navMenu.querySelectorAll('a');
+    navLinks.forEach(link => {
+        link.addEventListener('click', closeMenu);
+    });
+
+    // 3. Click Outside (Close if clicking anywhere else)
+    document.addEventListener('click', (e) => {
+        // If menu is open AND click is NOT on menu AND NOT on toggle
+        if (navMenu.classList.contains('active') &&
+            !navMenu.contains(e.target) &&
+            !menuToggle.contains(e.target)) {
+            closeMenu();
+        }
+    });
+
+    // 4. Resize Handler (Reset on desktop)
+    window.addEventListener('resize', () => {
+        if (window.innerWidth > 768 && navMenu.classList.contains('active')) {
+            closeMenu();
+        }
+    });
 }
 
 // ==========================================
