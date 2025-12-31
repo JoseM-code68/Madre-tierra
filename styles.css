@@ -1044,8 +1044,8 @@ button {
         flex-direction: column;
     }
 
-    .cta-section {
-        padding: 3rem 0;
+    .newsletter-form {
+        flex-direction: column;
     }
 }
 
