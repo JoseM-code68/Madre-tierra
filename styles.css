@@ -78,6 +78,7 @@ body {
     background-color: var(--color-white);
     line-height: 1.6;
     overflow-x: hidden;
+    /* Prevent horizontal scroll on mobile */
 }
 
 img {
@@ -992,6 +993,9 @@ button {
         box-shadow: var(--shadow-lg);
         padding: var(--spacing-md);
         display: none;
+        z-index: 1001;
+        /* Ensure it floats above everything */
+        border-top: 1px solid var(--color-gray-100);
     }
 
     .nav.active {
@@ -1005,6 +1009,9 @@ button {
 
     .menu-toggle {
         display: flex;
+        padding: 0.5rem;
+        /* Increase hit area */
+        cursor: pointer;
     }
 
     .hero-title {
@@ -1025,8 +1032,17 @@ button {
 }
 
 @media (max-width: 480px) {
+    :root {
+        --spacing-4xl: 4rem;
+        /* Reduce HUGE spacing on mobile */
+        --spacing-3xl: 3rem;
+        --spacing-2xl: 2.5rem;
+        --spacing-xl: 2rem;
+    }
+
     .hero-title {
-        font-size: 2rem;
+        font-size: 2.2rem;
+        /* Better scaling */
     }
 
     .category-cards {
@@ -1041,6 +1057,20 @@ button {
     .contact-info {
         flex-direction: column;
         gap: var(--spacing-xs);
+    }
+
+    .hero {
+        padding: 4rem 0;
+        /* Forced reduction */
+    }
+
+    .products,
+    .testimonials,
+    .contact-section,
+    .values-section,
+    .features-grid {
+        padding: 3rem 0;
+        /* Compact sections */
     }
 }
 
@@ -1952,6 +1982,13 @@ button {
 @media (max-width: 768px) {
     .testimonial-card {
         min-width: 280px;
+        /* Reduced width to fit mobile screens */
+        max-width: 85vw;
+        /* Ensure it never exceeds screen width */
+    }
+
+    .testimonials-slider {
+        padding: 2rem 0;
     }
 }
 
