@@ -725,6 +725,10 @@ button {
 .testimonials {
     position: relative;
     padding: var(--spacing-5xl) 0;
+    margin-top: -100px;
+    /* Pull section up to overlap with content above */
+    padding-top: calc(var(--spacing-5xl) + 100px);
+    /* Add padding to compensate */
     background-image: url('images/professional_hero_bg_1766903555894.webp');
     background-size: cover;
     background-position: center;
