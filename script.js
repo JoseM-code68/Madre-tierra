@@ -305,3 +305,10 @@ function initScrollAnimations() {
         observer.observe(el);
     });
 }
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    initMobileMenu();
+    initScrollAnimations();
+    // Initialize other functions if they exist
+});
