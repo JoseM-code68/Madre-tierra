@@ -1555,3 +1555,23 @@ button {
         font-size: 1.5rem;
     }
 }
+
+/* SAFETY FIX FOR MODAL VISIBILITY */
+#productModal {
+    z-index: 9999 !important;
+}
+.modal-overlay.active {
+    display: flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+.product-card {
+    cursor: pointer !important;
+    position: relative;
+    z-index: 1;
+}
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
