@@ -728,10 +728,11 @@ button {
    ========================================== */
 .testimonials {
     position: relative;
-    padding: var(--spacing-5xl) 0;
+    padding: var(--spacing-3xl) 0;
+    /* Reduced from 5xl to 3xl */
     margin-top: -200px;
     /* Pull section way up to cover header area */
-    padding-top: calc(var(--spacing-5xl) + 200px);
+    padding-top: calc(var(--spacing-3xl) + 200px);
     /* Add padding to compensate */
     background-image: url('images/professional_hero_bg_1766903555894.webp');
     background-size: cover;
@@ -762,6 +763,9 @@ button {
 
 .testimonials .section-title {
     color: var(--secondary-color);
+    font-size: 2.5rem;
+    /* Reduced title size */
+    margin-bottom: var(--spacing-lg);
 }
 
 .testimonials .section-title::after {
@@ -776,7 +780,8 @@ button {
 
 .testimonial-card {
     background: rgba(125, 178, 73, 0.9);
-    padding: var(--spacing-xl);
+    padding: var(--spacing-lg);
+    /* Reduced from xl */
     border-radius: var(--radius-md);
     transition: var(--transition-base);
 }
@@ -788,9 +793,11 @@ button {
 
 .testimonial-text {
     color: var(--color-white);
-    font-size: 1rem;
-    line-height: 1.7;
-    margin-bottom: var(--spacing-lg);
+    font-size: 0.95rem;
+    /* Slightly smaller */
+    line-height: 1.6;
+    margin-bottom: var(--spacing-md);
+    /* Reduced spacing */
     font-style: italic;
 }
 
