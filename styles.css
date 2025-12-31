@@ -1043,6 +1043,10 @@ button {
     .newsletter-form {
         flex-direction: column;
     }
+
+    .cta-section {
+        padding: 3rem 0;
+    }
 }
 
 @media (max-width: 480px) {
