@@ -1940,3 +1940,51 @@ button {
     padding: 3rem 0; /* Add vertical breathing room */
 }
 
+
+/* Testimonial Card Styling Fix */
+.testimonial-card {
+    background: #7DB249; /* Green by default */
+    color: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+.testimonial-text {
+    font-style: italic;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.testimonial-author h4 {
+    font-weight: 700;
+    margin-bottom: 0.2rem;
+}
+
+.testimonial-author p {
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+/* Hover Effect: Light/Clear when Paused */
+.testimonials-slider:hover .testimonial-card {
+    background: white;
+    color: #333;
+    transform: scale(1.02);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.testimonials-slider:hover .testimonial-text {
+    color: #555;
+}
+
+.testimonials-slider:hover .testimonial-author h4 {
+    color: #2c3e50;
+}
+
+.testimonials-slider:hover .testimonial-author p {
+    color: #7f8c8d;
+}
+
