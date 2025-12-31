@@ -1827,7 +1827,8 @@ button {
    B2B Services Page Styles
    ========================================= */
 .b2b-hero {
-    background: linear-gradient(rgba(0, 0, 50, 0.7), rgba(0, 0, 50, 0.6)), url('images/papaya_hero_1766902889376.webp');
+    /* Unified image (same as mobile) as requested */
+    background: linear-gradient(rgba(0, 0, 50, 0.6), rgba(0, 0, 50, 0.5)), url('images/mobile_b2b_bg.png');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -2171,4 +2172,15 @@ button {
 .testimonials-overlay {
     display: none !important;
     background: none !important;
+}
+
+/* =========================================
+   Mobile Fixes (Appended for Priority)
+   ========================================= */
+@media (max-width: 768px) {
+
+    /* Fix huge whitespace above footer */
+    .cta-section {
+        padding: 3rem 0 !important;
+    }
 }
