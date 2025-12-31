@@ -348,9 +348,15 @@ button {
     filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.15));
 }
 
+
 /* ==========================================
    CATEGORIES
    ========================================== */
+.categories {
+    padding: var(--spacing-5xl) 0;
+    background: var(--color-white);
+}
+
 .features {
     padding: var(--spacing-5xl) 0;
     /* Increased top padding */
