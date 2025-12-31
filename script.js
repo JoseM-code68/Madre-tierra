@@ -117,180 +117,213 @@ function initSearchAndFilters() {
     // Filter Logic
     filterButtons.forEach(btn => {
         btn.addEventListener('click', () => {
-            const countEl = document.getElementById('productCount');
-            let visibleByCount = 0;
+            filterButtons.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            filterProducts();
+        });
+    });
 
-            cards.forEach(card => {
-                const category = card.dataset.category || '';
-                const title = card.querySelector('h3')?.innerText.toLowerCase() || '';
+    // Search Logic
+    if (searchInput) {
+        searchInput.addEventListener('input', () => {
+            filterProducts();
+        });
 
-                const matchesFilter = currentFilter === 'all' || category.includes(currentFilter);
-                const matchesSearch = !searchTerm || title.includes(searchTerm);
-
-                if (matchesFilter && matchesSearch) {
-                    card.style.display = 'block';
-                    card.style.animation = 'fadeInUp 0.5s ease forwards';
-                    visibleByCount++;
-                } else {
-                    card.style.display = 'none';
+        // Check for URL search params (Cross-page search support)
+        const urlParams = new URLSearchParams(window.location.search);
+        const searchParam = urlParams.get('search');
+        if (searchParam) {
+            searchInput.value = searchParam;
+            // Scroll to products
+            setTimeout(() => {
+                const productSection = document.getElementById('productos');
+                if (productSection) {
+                    productSection.scrollIntoView({ behavior: 'smooth' });
                 }
-            });
-
-            if (countEl) {
-                countEl.innerHTML = `Mostrando <strong>${visibleByCount}</strong> producto${visibleByCount !== 1 ? 's' : ''}`;
-            }
+                filterProducts();
+            }, 500);
         }
+    }
+}
+
+function filterProducts() {
+    const currentFilter = document.querySelector('.filter-btn.active')?.dataset.filter || 'all';
+    const searchTerm = document.getElementById('productSearch')?.value.toLowerCase().trim() || '';
+    const cards = document.querySelectorAll('.product-card');
+    const countEl = document.getElementById('productCount');
+    let visibleByCount = 0;
+
+    cards.forEach(card => {
+        const category = card.dataset.category || '';
+        const title = card.querySelector('h3')?.innerText.toLowerCase() || '';
+
+        const matchesFilter = currentFilter === 'all' || category.includes(currentFilter);
+        const matchesSearch = !searchTerm || title.includes(searchTerm);
+
+        if (matchesFilter && matchesSearch) {
+            card.style.display = 'block';
+            card.style.animation = 'fadeInUp 0.5s ease forwards';
+            visibleByCount++;
+        } else {
+            card.style.display = 'none';
+        }
+    });
+
+    if (countEl) {
+        countEl.innerHTML = `Mostrando <strong>${visibleByCount}</strong> producto${visibleByCount !== 1 ? 's' : ''}`;
+    }
+}
 
 // ==========================================
 // 4. PRODUCT MODAL (The Core Request)
 // ==========================================
 function initModal() {
-                const modal = document.getElementById('productModal');
-                if (!modal) {
-                    console.error('❌ Modal element #productModal not found in DOM!');
-                    return;
-                }
+    const modal = document.getElementById('productModal');
+    if (!modal) {
+        console.error('❌ Modal element #productModal not found in DOM!');
+        return;
+    }
 
-                // Event Delegation for clicking products
-                document.body.addEventListener('click', (e) => {
-                    const card = e.target.closest('.product-card');
-                    if (card) {
-                        console.log('📦 Product clicked:', card);
-                        openModal(card);
-                    }
-                });
+    // Event Delegation for clicking products
+    document.body.addEventListener('click', (e) => {
+        const card = e.target.closest('.product-card');
+        if (card) {
+            console.log('📦 Product clicked:', card);
+            openModal(card);
+        }
+    });
 
-                // Close buttons
-                document.querySelectorAll('.modal-close').forEach(btn => {
-                    btn.addEventListener('click', closeModal);
-                });
+    // Close buttons
+    document.querySelectorAll('.modal-close').forEach(btn => {
+        btn.addEventListener('click', closeModal);
+    });
 
-                // Close on overlay click
-                modal.addEventListener('click', (e) => {
-                    if (e.target === modal) closeModal();
-                });
+    // Close on overlay click
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) closeModal();
+    });
 
-                // Close on Escape key
-                document.addEventListener('keydown', (e) => {
-                    if (e.key === 'Escape') closeModal();
-                });
-            }
+    // Close on Escape key
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') closeModal();
+    });
+}
 
 function openModal(card) {
-                const modal = document.getElementById('productModal');
-                const img = card.querySelector('img')?.src;
-                const title = card.querySelector('h3')?.innerText;
-                const price = card.querySelector('.product-price')?.innerText || 'Consultar';
-                const desc = card.querySelector('p')?.innerText || '';
-                const badge = card.querySelector('.product-badge');
+    const modal = document.getElementById('productModal');
+    const img = card.querySelector('img')?.src;
+    const title = card.querySelector('h3')?.innerText;
+    const price = card.querySelector('.product-price')?.innerText || 'Consultar';
+    const desc = card.querySelector('p')?.innerText || '';
+    const badge = card.querySelector('.product-badge');
 
-                // Fill Data
-                document.getElementById('modalImage').src = img;
-                document.getElementById('modalTitle').innerText = title;
-                document.getElementById('modalPrice').innerText = price;
-                document.getElementById('modalDescription').innerText = desc;
+    // Fill Data
+    document.getElementById('modalImage').src = img;
+    document.getElementById('modalTitle').innerText = title;
+    document.getElementById('modalPrice').innerText = price;
+    document.getElementById('modalDescription').innerText = desc;
 
-                // Badge
-                const modalBadge = document.getElementById('modalBadge');
-                if (badge) {
-                    modalBadge.innerText = badge.innerText;
-                    modalBadge.className = badge.className;
-                    modalBadge.style.display = 'inline-block';
-                } else {
-                    modalBadge.style.display = 'none';
-                }
+    // Badge
+    const modalBadge = document.getElementById('modalBadge');
+    if (badge) {
+        modalBadge.innerText = badge.innerText;
+        modalBadge.className = badge.className;
+        modalBadge.style.display = 'inline-block';
+    } else {
+        modalBadge.style.display = 'none';
+    }
 
-                // Reset Quantity
-                const qtyInput = document.getElementById('orderQuantity');
-                if (qtyInput) qtyInput.value = 1;
+    // Reset Quantity
+    const qtyInput = document.getElementById('orderQuantity');
+    if (qtyInput) qtyInput.value = 1;
 
-                // Show
-                modal.classList.add('active');
-                document.body.style.overflow = 'hidden'; // Lock scroll
-            }
+    // Show
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden'; // Lock scroll
+}
 
 function closeModal() {
-                const modal = document.getElementById('productModal');
-                if (modal) {
-                    modal.classList.remove('active');
-                    document.body.style.overflow = ''; // Unlock scroll
-                }
-            }
+    const modal = document.getElementById('productModal');
+    if (modal) {
+        modal.classList.remove('active');
+        document.body.style.overflow = ''; // Unlock scroll
+    }
+}
 
 // ==========================================
 // 5. WHATSAPP & QUANTITY
 // ==========================================
 function initWhatsApp() {
-                const qtyInput = document.getElementById('orderQuantity');
-                const minusBtn = document.querySelector('.qty-btn.minus');
-                const plusBtn = document.querySelector('.qty-btn.plus');
+    const qtyInput = document.getElementById('orderQuantity');
+    const minusBtn = document.querySelector('.qty-btn.minus');
+    const plusBtn = document.querySelector('.qty-btn.plus');
 
-                // Quantity Logic
-                if (minusBtn && qtyInput) {
-                    minusBtn.addEventListener('click', () => {
-                        let val = parseInt(qtyInput.value) || 1;
-                        if (val > 1) qtyInput.value = val - 1;
-                    });
-                }
+    // Quantity Logic
+    if (minusBtn && qtyInput) {
+        minusBtn.addEventListener('click', () => {
+            let val = parseInt(qtyInput.value) || 1;
+            if (val > 1) qtyInput.value = val - 1;
+        });
+    }
 
-                if (plusBtn && qtyInput) {
-                    plusBtn.addEventListener('click', () => {
-                        let val = parseInt(qtyInput.value) || 1;
-                        qtyInput.value = val + 1;
-                    });
-                }
+    if (plusBtn && qtyInput) {
+        plusBtn.addEventListener('click', () => {
+            let val = parseInt(qtyInput.value) || 1;
+            qtyInput.value = val + 1;
+        });
+    }
 
-                // Form Submit
-                const form = document.getElementById('orderForm');
-                if (form) {
-                    form.addEventListener('submit', (e) => {
-                        e.preventDefault();
-                        sendWhatsApp();
-                    });
-                }
-            }
+    // Form Submit
+    const form = document.getElementById('orderForm');
+    if (form) {
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            sendWhatsApp();
+        });
+    }
+}
 
 function sendWhatsApp() {
-                const title = document.getElementById('modalTitle')?.innerText || 'Producto';
-                const price = document.getElementById('modalPrice')?.innerText;
-                const qty = document.getElementById('orderQuantity')?.value || '1';
-                const name = document.getElementById('clientName')?.value || 'Cliente';
-                const phone = '18494671581';
+    const title = document.getElementById('modalTitle')?.innerText || 'Producto';
+    const price = document.getElementById('modalPrice')?.innerText;
+    const qty = document.getElementById('orderQuantity')?.value || '1';
+    const name = document.getElementById('clientName')?.value || 'Cliente';
+    const phone = '18494671581';
 
-                let msg = `Hola, quiero pedir en Madre Tierra:\n\n`;
-                msg += `Producto/s: ${title}\n`;
-                msg += `Cantidad: ${qty}\n`;
-                msg += `Precio: ${price}\n`;
-                msg += `Mi Nombre: ${name}\n\n`;
-                msg += `¿Me confirma disponibilidad?`;
+    let msg = `Hola, quiero pedir en Madre Tierra:\n\n`;
+    msg += `Producto/s: ${title}\n`;
+    msg += `Cantidad: ${qty}\n`;
+    msg += `Precio: ${price}\n`;
+    msg += `Mi Nombre: ${name}\n\n`;
+    msg += `¿Me confirma disponibilidad?`;
 
-                const url = `https://wa.me/${phone}?text=${encodeURIComponent(msg)}`;
-                window.open(url, '_blank');
-                closeModal();
-            }
+    const url = `https://wa.me/${phone}?text=${encodeURIComponent(msg)}`;
+    window.open(url, '_blank');
+    closeModal();
+}
 
 // ==========================================
 // 6. SCROLL ANIMATIONS
 // ==========================================
 function initScrollAnimations() {
-                const observer = new IntersectionObserver((entries) => {
-                    entries.forEach(entry => {
-                        if (entry.isIntersecting) {
-                            entry.target.style.animation = 'fadeInUp 0.8s ease forwards';
-                            observer.unobserve(entry.target);
-                        }
-                    });
-                }, { threshold: 0.1 });
-
-                document.querySelectorAll('.product-card').forEach(el => {
-                    // el.style.opacity = '0'; // Avoid flashing if JS loads late
-                    observer.observe(el);
-                });
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.animation = 'fadeInUp 0.8s ease forwards';
+                observer.unobserve(entry.target);
             }
+        });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.product-card').forEach(el => {
+        // el.style.opacity = '0'; // Avoid flashing if JS loads late
+        observer.observe(el);
+    });
+}
 
 
 document.addEventListener('DOMContentLoaded', () => {
-                initMobileMenu();
-                initScrollAnimations();
-                // Initialize other functions if they exist
-            });
+    initMobileMenu();
+    initScrollAnimations();
+    // Initialize other functions if they exist
+});
