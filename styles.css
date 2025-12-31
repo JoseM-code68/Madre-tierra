@@ -1718,3 +1718,149 @@ button {
     background: white;
 }
 
+
+/* =========================================
+   B2B Services Page Styles
+   ========================================= */
+.b2b-hero {
+    background: linear-gradient(rgba(0, 0, 50, 0.7), rgba(0, 0, 50, 0.6)), url('images/papaya_hero_1766902889376.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    margin-top: 80px;
+    border-radius: 0 0 50px 50px;
+}
+
+.b2b-hero-content h1 {
+    font-size: 3.5rem;
+    font-family: 'Playfair Display', serif;
+    margin: 1rem 0;
+    line-height: 1.2;
+}
+
+.hero-label {
+    display: inline-block;
+    padding: 0.5rem 1.5rem;
+    background: var(--primary-color);
+    border-radius: 50px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+}
+
+.hero-buttons {
+    margin-top: 2rem;
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.btn-outline {
+    border: 2px solid white;
+    color: white;
+    padding: 0.8rem 2rem;
+    border-radius: 30px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+.btn-outline:hover {
+    background: white;
+    color: black;
+}
+
+.sectors-section {
+    padding: 6rem 0;
+    background: #f8f9fa;
+}
+
+.sectors-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.sector-card {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    transition: transform 0.3s, box-shadow 0.3s;
+    border-top: 4px solid var(--primary-color);
+}
+
+.sector-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+}
+
+.sector-icon {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+}
+
+.sector-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    color: var(--secondary-color);
+}
+
+.sector-card ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sector-card li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #eee;
+    color: var(--text-light);
+}
+
+.sector-card li:last-child {
+    border-bottom: none;
+}
+
+.cta-section {
+    padding: 6rem 0;
+    background: var(--secondary-color);
+    color: white;
+    text-align: center;
+}
+
+.cta-content h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.cta-content p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+}
+
+/* Mobile Responsive B2B */
+@media (max-width: 768px) {
+    .b2b-hero-content h1 {
+        font-size: 2.2rem;
+    }
+    
+    .hero-buttons {
+        flex-direction: column;
+    }
+
+    .sector-card {
+        padding: 1.5rem;
+    }
+}
+
