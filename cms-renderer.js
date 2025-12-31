@@ -136,10 +136,15 @@ document.addEventListener('DOMContentLoaded', async () => {
             });
         }
 
-        // Render testimonials (Static Grid)
-        const testimonialsGrid = document.querySelector('.testimonials-grid');
-        if (testimonialsGrid && content.testimonials.length > 0) {
-            window.contentRenderer.renderTestimonials(content.testimonials, testimonialsGrid);
+        // Render testimonials (Carousel Logic)
+        const testimonialsTrack = document.querySelector('.testimonials-track');
+        if (testimonialsTrack && content.testimonials.length > 0) {
+            // Duplicate array for infinite loop effect
+            let loopContent = content.testimonials;
+            // Always duplicate at least once to ensure scroll works
+            loopContent = [...loopContent, ...loopContent, ...loopContent];
+
+            window.contentRenderer.renderTestimonials(loopContent, testimonialsTrack);
         }
 
         // Update settings
