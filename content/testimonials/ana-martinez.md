@@ -1,5 +1,5 @@
 ---
-name: "Ana Martínez"
+name: "Anónimo"
 company: "Tienda Orgánica Vida Sana"
 text: "Muy satisfecha. Entrega perfecta y puntual. Productos frescos de excelente calidad."
 initials: "AM"
