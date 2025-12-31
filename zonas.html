@@ -29,8 +29,10 @@
 
     <style>
         .zones-hero {
-            background: linear-gradient(135deg, #7DB249 0%, #5a8a34 100%);
-            padding: 120px 0 80px;
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.5)), url('images/zones_hero_bg.png');
+            background-size: cover;
+            background-position: center;
+            padding: 140px 0 100px;
             color: white;
             text-align: center;
         }
@@ -46,6 +48,15 @@
             opacity: 0.95;
             max-width: 600px;
             margin: 0 auto;
+            margin-bottom: 2rem;
+        }
+
+        /* Search Box Override for dark background */
+        .zones-hero .search-box {
+            max-width: 600px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(5px);
         }
 
         .zones-section {
